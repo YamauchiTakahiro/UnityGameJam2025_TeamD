@@ -1,0 +1,2 @@
+# UnityGameJam2025_TeamD
+2025年夏休みに行われるUnityGameJamのリポジトリ
