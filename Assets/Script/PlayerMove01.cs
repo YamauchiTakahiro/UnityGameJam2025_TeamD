@@ -5,7 +5,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MoveScript : MonoBehaviour
+public class PlayerMove01 : MonoBehaviour
 {
     public float speed = 5.0f;
 
