@@ -20,7 +20,7 @@ public class BarrageScript : MonoBehaviour
         time += Time.deltaTime;
         if(time > timeReset)
         {
-            if (Input.GetButton("Fire1"))
+            if (Input.GetKey("space"))
             {
                 GameObject barrage = (GameObject)Instantiate(sphere, transform.position, Quaternion.identity);
                 Rigidbody barrageRigidbody = barrage.GetComponent<Rigidbody>();

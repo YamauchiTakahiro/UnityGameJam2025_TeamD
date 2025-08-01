@@ -23,7 +23,6 @@ public class EnemyBarrageDeleteScript : MonoBehaviour
     {
         if(other.gameObject.name == "Cube")
         {
-            Destroy(other.gameObject);
             Destroy(gameObject);
         }
     }

@@ -8,7 +8,7 @@ public class EnemyBarrageScript : MonoBehaviour
 
     void Start()
     {
-            InvokeRepeating("EnemyBarrageSpawn", 1.0f, 0.5f);
+            InvokeRepeating("EnemyBarrageSpawn", 1.0f, 1.0f);
     }
 
     void Update()
@@ -18,7 +18,10 @@ public class EnemyBarrageScript : MonoBehaviour
 
     void EnemyBarrageSpawn()
     {
-        GameObject enemyBarrage = GameObject.Instantiate(prefab) as GameObject;
-        enemyBarrage.GetComponent<Rigidbody>().AddForce(transform.right * -300);
+        if(transform.position.x <= 10.0f && transform.position.x >= -10.0f)
+        {
+            GameObject enemyBarrage = GameObject.Instantiate(prefab) as GameObject;
+            enemyBarrage.GetComponent<Rigidbody>().AddForce(transform.right * -300);
+        }
     }
 }
