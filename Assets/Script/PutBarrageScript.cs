@@ -15,7 +15,7 @@ public class PutBarrage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetKey("space"))
         {
             GameObject barrage = (GameObject)Instantiate(barrageprefab, transform.position, Quaternion.identity);
             Rigidbody barrageRigidbody = barrage.GetComponent<Rigidbody>();
