@@ -16,6 +16,7 @@ public class PlayerMove01 : MonoBehaviour
     }
 
     // Update is called once per frame
+    //ã‰ºˆÚ“®B
     void Update()
     {
         float moveX = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
