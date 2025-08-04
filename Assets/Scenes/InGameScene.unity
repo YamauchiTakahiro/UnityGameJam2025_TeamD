@@ -766,7 +766,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemObject: {fileID: 0}
-  item: {fileID: 0}
 --- !u!4 &1364252556
 Transform:
   m_ObjectHideFlags: 0
