@@ -19,6 +19,6 @@ public class Title : MonoBehaviour
 
     public void onClickStartButton()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("InGameScene");
     }
 }
