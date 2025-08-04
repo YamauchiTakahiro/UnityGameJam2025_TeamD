@@ -9,12 +9,12 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PlayerBarrage
   - Water
   - UI
-  - 
-  - 
-  - 
+  - EnemyBarrage
+  - Enemy
+  - Player
   - 
   - 
   - 

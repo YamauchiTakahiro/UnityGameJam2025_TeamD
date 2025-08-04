@@ -21,7 +21,7 @@ public class Script : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.name == "Enemy")
+        if(other.gameObject.CompareTag("Enemy"))
         {
             Destroy(other.gameObject);
             Destroy(gameObject);

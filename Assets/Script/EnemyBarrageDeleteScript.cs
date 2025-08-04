@@ -21,7 +21,7 @@ public class EnemyBarrageDeleteScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.name == "Cube")
+        if(other.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
         }
