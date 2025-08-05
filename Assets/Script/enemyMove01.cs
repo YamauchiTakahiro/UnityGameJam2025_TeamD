@@ -17,7 +17,17 @@ public class enemyMove01 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(flag)
+        if (transform.position.y >= 3)
+        {
+            flag = true;
+        }
+
+        else if (transform.position.y <= -3)
+        {
+            flag = false;
+        }
+
+        if (flag)
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(9, 3, 1), speed * Time.deltaTime);
         }
@@ -26,21 +36,12 @@ public class enemyMove01 : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(9, -3, 1), speed * Time.deltaTime);
         }
-        
-        if(Input.GetMouseButtonDown(0))
-        {
-            flag = true;
-        }
-
-        else if(Input.GetMouseButtonDown(1))
-        {
-            flag = false;
-        }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("PlayerBarrage"))
-        {
+        { 
             if(item)
             {
                 Instantiate(item, transform.position, Quaternion.identity);

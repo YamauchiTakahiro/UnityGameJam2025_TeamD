@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
@@ -17,6 +18,16 @@ public class enemyMove02 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(transform.position.y>=3)
+        {
+            flag = true;
+        }
+
+        else if(transform.position.y<=-3)
+        {
+            flag = false;
+        }
+
         if (flag)
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(8, 3, 1), speed * Time.deltaTime);
@@ -27,14 +38,6 @@ public class enemyMove02 : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(8, -3, 1), speed * Time.deltaTime);
         }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            flag = true;
-        }
-
-        else if (Input.GetMouseButtonDown(1))
-        {
-            flag = false;
-        }
+        
     }
 }
