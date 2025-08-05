@@ -453,6 +453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flag: 0
   item: {fileID: 5982028961542052055, guid: 5ddc78d76e71db949add3926d57056f5, type: 3}
+  random: 0
 --- !u!1 &291903328
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,9 +676,9 @@ GameObject:
   m_Component:
   - component: {fileID: 397714495}
   - component: {fileID: 397714494}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnemyBarrage
-  m_TagString: Untagged
+  m_TagString: EnemyBarrage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -833,6 +834,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  ReinforcementItemCount: 0
+  ReinforceBarrage:
+  - {fileID: 92221565}
+  - {fileID: 1617134701}
 --- !u!1 &688282340
 GameObject:
   m_ObjectHideFlags: 0
