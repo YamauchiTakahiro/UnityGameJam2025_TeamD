@@ -23,7 +23,6 @@ public class Script : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Enemy"))
         {
-            Destroy(other.gameObject);
             Destroy(gameObject);
         }
     }
