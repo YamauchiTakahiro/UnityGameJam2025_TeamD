@@ -8,10 +8,11 @@ public class ReinforceBarrage : MonoBehaviour
     private float timeReset = 1;
     private float time = 0;
     private float speed = 300;
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -22,6 +23,7 @@ public class ReinforceBarrage : MonoBehaviour
         {
             if (Input.GetKey("space"))
             {
+                audioSource.Play();
                 GameObject ball = (GameObject)Instantiate(sphere, transform.position, Quaternion.identity);
                 Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
                 ballRigidbody.AddForce(transform.right * speed);

@@ -8,10 +8,12 @@ public class BarrageScript : MonoBehaviour
     private float timeReset = 1;
     private float time = 0;
     private float speed = 300;
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
         time = 0;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class BarrageScript : MonoBehaviour
             //spaceキー長押しで実行する
             if (Input.GetKey("space"))
             {
+                audioSource.Play();
                 //弾を出す
                 GameObject barrage = (GameObject)Instantiate(sphere, transform.position, Quaternion.identity);
                 Rigidbody barrageRigidbody = barrage.GetComponent<Rigidbody>();
