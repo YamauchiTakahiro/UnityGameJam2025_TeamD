@@ -29,12 +29,12 @@ public class enemyMove01 : MonoBehaviour
 
         if (flag)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(9, 3, 1), speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(9, -3, 1), speed * Time.deltaTime);
         }
 
         else if(!flag)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(9, -3, 1), speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(9, 3, 1), speed * Time.deltaTime);
         }
     }
 
@@ -46,6 +46,7 @@ public class enemyMove01 : MonoBehaviour
             {
                 Instantiate(item, transform.position, Quaternion.identity);
             }
+            Destroy(gameObject);
         }
     }
 }
