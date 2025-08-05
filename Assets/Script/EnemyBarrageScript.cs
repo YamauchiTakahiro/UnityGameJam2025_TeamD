@@ -4,24 +4,28 @@ using UnityEngine;
 
 public class EnemyBarrageScript : MonoBehaviour
 {
-    public GameObject prefab;
-
+    [SerializeField] GameObject sphere;
+    private float timeReset = 1;
+    private float time = 0;
+    private float speed = -300;
+    // Start is called before the first frame update
     void Start()
     {
-            InvokeRepeating("EnemyBarrageSpawn", 1.0f, 1.0f);
+        time = 0;
     }
 
+    // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    void EnemyBarrageSpawn()
-    {
-        if(transform.position.x <= 10.0f && transform.position.x >= -10.0f)
+        //àÍíËä‘äuÇ≈é¿çsÇ∑ÇÈ
+        time += Time.deltaTime;
+        if (time > timeReset)
         {
-            GameObject enemyBarrage = GameObject.Instantiate(prefab) as GameObject;
-            enemyBarrage.GetComponent<Rigidbody>().AddForce(transform.right * -300);
+            //íeÇèoÇ∑
+            GameObject barrage = (GameObject)Instantiate(sphere, transform.position, Quaternion.identity);
+            Rigidbody barrageRigidbody = barrage.GetComponent<Rigidbody>();
+            barrageRigidbody.AddForce(transform.right * speed);
+            time = 0;
         }
     }
 }

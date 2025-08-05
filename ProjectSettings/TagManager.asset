@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - ReinforcementItem
+  - EnemyBarrage
+  - Barrage
   layers:
   - Default
   - TransparentFX
