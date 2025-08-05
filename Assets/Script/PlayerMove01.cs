@@ -22,4 +22,11 @@ public class MoveScript : MonoBehaviour
         float moveY = Input.GetAxis("Vertical") * Time.deltaTime * speed;
         transform.position = new Vector3(transform.position.x + moveX, transform.position.y + moveY, transform.position.z);
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("EnemyBarrage"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
