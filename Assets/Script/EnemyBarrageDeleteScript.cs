@@ -13,7 +13,7 @@ public class EnemyBarrageDeleteScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x >= 20.0f)
+        if (transform.position.x <= -20.0f)
         {
             Destroy(gameObject);
         }
