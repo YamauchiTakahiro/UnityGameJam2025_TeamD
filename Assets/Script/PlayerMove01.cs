@@ -14,6 +14,10 @@ public class PlayerMove02 : MonoBehaviour
 
     public GameObject[] ReinforceBarrage;
 
+    public AudioClip sound;
+
+    public AudioClip ItemSound;
+
     // Start is called before the first frame update
 
     void Start()
@@ -43,7 +47,6 @@ public class PlayerMove02 : MonoBehaviour
             ReinforceBarrage[1].SetActive(true);
 
         }
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -58,16 +61,16 @@ public class PlayerMove02 : MonoBehaviour
 
             ReinforcementItemCount += 1;
 
+            AudioSource.PlayClipAtPoint(ItemSound, transform.position);
+
         }
 
         if (other.gameObject.CompareTag("EnemyBarrage"))
-
         {
-
             Destroy(gameObject);
-
+            AudioSource.PlayClipAtPoint(sound, transform.position);
         }
-
+        
     }
 
 }
