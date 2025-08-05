@@ -9,7 +9,6 @@ public class enemyMove02 : MonoBehaviour
 {
     private float speed = 5.0f;
     public bool flag;
-    private ReinforcementItemScript item;
 
     // Start is called before the first frame update
     void Start()

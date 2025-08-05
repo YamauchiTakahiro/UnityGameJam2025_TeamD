@@ -6,12 +6,12 @@ public class enemyMove01 : MonoBehaviour
 {
     private float speed = 5.0f;
     public bool flag;
-    private ReinforcementItemScript item;
-
+    [SerializeField] GameObject item;
+    int random;
     // Start is called before the first frame update
     void Start()
     {
-        item = GetComponent<ReinforcementItemScript>();
+        
     }
 
     // Update is called once per frame
@@ -42,9 +42,13 @@ public class enemyMove01 : MonoBehaviour
     {
         if(other.gameObject.CompareTag("PlayerBarrage"))
         { 
-            if(item)
+            random = Random.Range(1, 100);
+            if(random <= 100)
             {
-                Instantiate(item, transform.position, Quaternion.identity);
+                if (item)
+                {
+                    Instantiate(item, transform.position, Quaternion.identity);
+                }
             }
             Destroy(gameObject);
         }

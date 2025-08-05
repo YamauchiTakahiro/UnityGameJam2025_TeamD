@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
-public class mitsumune2 : MonoBehaviour
+public class Item : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,6 +14,6 @@ public class mitsumune2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(Vector3.left * Time.deltaTime);
     }
 }
