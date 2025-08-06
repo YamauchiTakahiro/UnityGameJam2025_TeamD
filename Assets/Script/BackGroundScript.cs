@@ -36,10 +36,10 @@ public class BackGroundMover : MonoBehaviour
         m_copiedMaterial.SetTextureOffset(k_propName, offset);
     }
 
-    private void OnDestroy()
-    {
-        // ゲームオブジェクト破壊時にマテリアルのコピーも消しておく
-        Destroy(m_copiedMaterial);
-        m_copiedMaterial = null;
-    }
+    //private void OnDestroy()
+    //{
+    //    // ゲームオブジェクト破壊時にマテリアルのコピーも消しておく
+    //    Destroy(m_copiedMaterial);
+    //    m_copiedMaterial = null;
+    //}
 }
