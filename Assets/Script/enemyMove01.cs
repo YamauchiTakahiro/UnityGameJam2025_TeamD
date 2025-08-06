@@ -14,18 +14,18 @@ public class enemyMove01 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Invoke(nameof(EnemyDestroy), 40.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y >= 3)
+        if (transform.position.y >= 7)
         {
             flag = true;
         }
 
-        else if (transform.position.y <= -3)
+        else if (transform.position.y <= -7)
         {
             flag = false;
         }
@@ -56,5 +56,10 @@ public class enemyMove01 : MonoBehaviour
             Destroy(gameObject);
             AudioSource.PlayClipAtPoint(sound, transform.position);
         }
+    }
+
+    void EnemyDestroy()
+    {
+        Destroy(gameObject);
     }
 }
