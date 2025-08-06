@@ -11,19 +11,19 @@ public class PlayerMove02 : MonoBehaviour
     public float speed = 5.0f;
 
     public int ReinforcementItemCount = 0;
-
+    [SerializeField] private Renderer PlaerInvincible;
     public GameObject[] ReinforceBarrage;
-
+    public CollectionBase Player;
     public AudioClip sound;
 
     public AudioClip ItemSound;
-
+    public int hitCount = 3;
+    public bool isHit;
     // Start is called before the first frame update
 
     void Start()
 
     {
-
     }
 
     // Update is called once per frame
@@ -67,11 +67,21 @@ public class PlayerMove02 : MonoBehaviour
 
         if (other.gameObject.CompareTag("EnemyBarrage"))
         {
-            Destroy(gameObject);
+            hitCount -= 1;
             AudioSource.PlayClipAtPoint(sound, transform.position);
+            this.gameObject.layer = 10;
+            Invoke(nameof(PlayerActive), 1.0f);
+            if (hitCount == 0)
+            {
+                Destroy(gameObject);
+            }
         }
         
     }
 
+    void PlayerActive()
+    {
+        this.gameObject.layer = 8;
+    }
 }
 
