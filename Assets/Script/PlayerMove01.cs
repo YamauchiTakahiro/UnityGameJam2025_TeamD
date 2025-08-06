@@ -39,6 +39,27 @@ public class PlayerMove02 : MonoBehaviour
 
         transform.position = new Vector3(transform.position.x + moveX, transform.position.y + moveY, transform.position.z);
 
+        if(transform.position.y < -4)
+        {
+            transform.position = new Vector3(transform.position.x, -4.0f, transform.position.z);
+        }
+
+        if (transform.position.y > 7)
+        {
+            transform.position = new Vector3(transform.position.x, 7.0f, transform.position.z);
+        }
+
+        if (transform.position.x < -10)
+        {
+            transform.position = new Vector3(-10.0f, transform.position.y, transform.position.z);
+        }
+
+        if (transform.position.x > 1)
+        {
+            transform.position = new Vector3(0.0f, transform.position.y, transform.position.z);
+
+        }
+
         if (ReinforcementItemCount >= 1)
 
         {
