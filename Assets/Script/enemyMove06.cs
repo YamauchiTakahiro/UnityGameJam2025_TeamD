@@ -32,12 +32,12 @@ public class enemyMove06 : MonoBehaviour
 
         if (flag)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(9, -3, 1), speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(3, -7, 1), speed * Time.deltaTime);
         }
 
         else if (!flag)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(9, 3, 1), speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(3, 7, 1), speed * Time.deltaTime);
         }
     }
 
