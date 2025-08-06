@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class enemyMove01 : MonoBehaviour
@@ -8,6 +9,7 @@ public class enemyMove01 : MonoBehaviour
     public bool flag;
     [SerializeField] GameObject item;
     public int random;
+    public AudioClip sound;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +46,7 @@ public class enemyMove01 : MonoBehaviour
         if(other.gameObject.CompareTag("PlayerBarrage"))
         { 
             random = Random.Range(1, 100);
-            if(random <= 100)
+            if(random <= 35)
             {
                 if (item)
                 {
@@ -52,6 +54,7 @@ public class enemyMove01 : MonoBehaviour
                 }
             }
             Destroy(gameObject);
+            AudioSource.PlayClipAtPoint(sound, transform.position);
         }
     }
 }
