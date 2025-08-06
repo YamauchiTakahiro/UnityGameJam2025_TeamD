@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossEnemy : MonoBehaviour
 {
@@ -46,6 +47,7 @@ public class BossEnemy : MonoBehaviour
             if(hitCount == 0)
             {
                 Destroy(gameObject);
+                SceneManager.LoadScene("GameClear");
                 AudioSource.PlayClipAtPoint(sound, transform.position);
             }
         }
