@@ -46,7 +46,7 @@ public class enemyMove03 : MonoBehaviour
         if (other.gameObject.CompareTag("PlayerBarrage"))
         {
             random = Random.Range(1, 100);
-            if (random <= 35)
+            if (random <= 20)
             {
                 if (item)
                 {
