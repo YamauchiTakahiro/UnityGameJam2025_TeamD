@@ -963,6 +963,7 @@ MonoBehaviour:
   - {fileID: 1617134701}
   sound: {fileID: 8300000, guid: b9ccdb8104ffc764c900b0d5ad67646b, type: 3}
   ItemSound: {fileID: 8300000, guid: e80d44e0767fb46428d09b7814183472, type: 3}
+  LifeItemSound: {fileID: 8300000, guid: 7a3722578721d9d44bf47bd0dbd67afe, type: 3}
   hitCount: 3
   isHit: 0
 --- !u!1 &545297577

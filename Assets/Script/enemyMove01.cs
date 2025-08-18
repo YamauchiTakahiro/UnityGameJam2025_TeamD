@@ -8,6 +8,7 @@ public class enemyMove01 : MonoBehaviour
     private float speed = 5.0f;
     public bool flag;
     [SerializeField] GameObject item;
+    [SerializeField] GameObject lifeitem;
     public int random;
     public AudioClip sound;
 
@@ -46,11 +47,18 @@ public class enemyMove01 : MonoBehaviour
         if(other.gameObject.CompareTag("PlayerBarrage"))
         { 
             random = Random.Range(1, 100);
-            if(random <= 20)
+            if(random <= 10)
             {
                 if (item)
                 {
                     Instantiate(item, transform.position, Quaternion.identity);
+                }
+            }
+            if (random <= 10)
+            {
+                if (lifeitem)
+                {
+                    Instantiate(lifeitem, transform.position, Quaternion.identity);
                 }
             }
             Destroy(gameObject);
