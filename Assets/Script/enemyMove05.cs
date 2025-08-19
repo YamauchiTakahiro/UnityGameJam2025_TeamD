@@ -54,7 +54,7 @@ public class enemyMove05 : MonoBehaviour
                     Instantiate(item, transform.position, Quaternion.identity);
                 }
             }
-            if (random <= 10)
+            if (random >= 10 && random <= 20)
             {
                 if (lifeitem)
                 {
