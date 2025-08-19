@@ -8,6 +8,7 @@ TagManager:
   - EnemyBarrage
   - PlayerBarrage
   - ReinforcementItem
+  - LifeItem
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Item
   - PlayerInvincible
   - BGM
-  - 
+  - LifeItem
   - 
   - 
   - 

@@ -18,6 +18,7 @@ public class PlayerMove02 : MonoBehaviour
     public AudioClip sound;
 
     public AudioClip ItemSound;
+    public AudioClip LifeItemSound;
     public int hitCount = 3;
     public bool isHit;
     // Start is called before the first frame update
@@ -85,6 +86,15 @@ public class PlayerMove02 : MonoBehaviour
 
             AudioSource.PlayClipAtPoint(ItemSound, transform.position);
 
+        }
+
+        if(other.gameObject.CompareTag("LifeItem"))
+        {
+            Destroy(other.gameObject);
+
+            hitCount += 1;
+
+            AudioSource.PlayClipAtPoint(LifeItemSound, transform.position);
         }
 
         if (other.gameObject.CompareTag("EnemyBarrage"))
