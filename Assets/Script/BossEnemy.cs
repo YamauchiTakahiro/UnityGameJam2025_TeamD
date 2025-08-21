@@ -7,6 +7,8 @@ public class BossEnemy : MonoBehaviour
 {
     private float speed = 5.0f;
     public bool flag;
+    [SerializeField] private Renderer PlaerInvincible;
+    public GameObject[] EnemyBarrage;
     public AudioClip sound;
     public int hitCount = 50;
     // Start is called before the first frame update
@@ -37,6 +39,17 @@ public class BossEnemy : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(9, 3, 1), speed * Time.deltaTime);
         }
+
+        if (hitCount <= 20)
+
+        {
+
+            EnemyBarrage[0].SetActive(true);
+
+            EnemyBarrage[1].SetActive(true);
+
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
