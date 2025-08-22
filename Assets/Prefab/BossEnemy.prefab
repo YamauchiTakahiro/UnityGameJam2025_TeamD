@@ -217,7 +217,7 @@ MonoBehaviour:
   EnemyBarrage:
   - {fileID: 1034191037256044171}
   - {fileID: 1370533462199468038}
-  sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: 3e960f3fd38350c4e882d9b57df156ee, type: 3}
   hitCount: 50
 --- !u!1 &3269914154139073608
 GameObject:
