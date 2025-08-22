@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class enemyMove06 : MonoBehaviour
 {
@@ -12,10 +13,13 @@ public class enemyMove06 : MonoBehaviour
     public int random;
     public AudioClip sound;
 
+    private GameObject scoreText;
+
     // Start is called before the first frame update
     void Start()
     {
         Invoke(nameof(EnemyDestroy), 40.0f);
+        scoreText = GameObject.Find("Score");
     }
 
     // Update is called once per frame
@@ -63,6 +67,7 @@ public class enemyMove06 : MonoBehaviour
             }
             Destroy(gameObject);
             AudioSource.PlayClipAtPoint(sound, transform.position);
+            scoreText.GetComponent<Score>().score += 100;
         }
     }
 
