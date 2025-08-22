@@ -214,11 +214,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flag: 0
   PlaerInvincible: {fileID: 0}
+  item: {fileID: 5982028961542052055, guid: 5ddc78d76e71db949add3926d57056f5, type: 3}
+  lifeitem: {fileID: 4325470354411848048, guid: 126049d7d8f46b5499372e1125e1e734, type: 3}
+  bombitem: {fileID: 7866026816920330701, guid: 24ad75f8126104e41943ab3892048de1, type: 3}
   EnemyBarrage:
   - {fileID: 1034191037256044171}
   - {fileID: 1370533462199468038}
   sound: {fileID: 8300000, guid: 3e960f3fd38350c4e882d9b57df156ee, type: 3}
-  hitCount: 50
+  hitCount: 500
+  itemFlag: 0
+  random: 0
 --- !u!1 &3269914154139073608
 GameObject:
   m_ObjectHideFlags: 0
