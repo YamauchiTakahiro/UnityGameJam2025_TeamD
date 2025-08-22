@@ -11,10 +11,12 @@ public class BossEnemy : MonoBehaviour
     public GameObject[] EnemyBarrage;
     public AudioClip sound;
     public int hitCount = 50;
+
+    private GameObject scoreText;
     // Start is called before the first frame update
     void Start()
     {
-
+        scoreText = GameObject.Find("Score");
     }
 
     // Update is called once per frame
@@ -62,6 +64,7 @@ public class BossEnemy : MonoBehaviour
                 Destroy(gameObject);
                 SceneManager.LoadScene("GameClear");
                 AudioSource.PlayClipAtPoint(sound, transform.position);
+                scoreText.GetComponent<Score>().score += 10000;
             }
         }
     }

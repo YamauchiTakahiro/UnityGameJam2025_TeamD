@@ -12,11 +12,14 @@ public class enemyMove04 : MonoBehaviour
     public int random;
     public AudioClip sound;
 
+    private GameObject scoreText;
+
     // Start is called before the first frame update
     void Start()
     {
         //40•bŒã‚©‚çEnemy‚ª‚Å‚È‚¢‚æ‚¤‚É‚·‚é
         Invoke(nameof(EnemyDestroy), 40.0f);
+        scoreText = GameObject.Find("Score");
     }
 
     // Update is called once per frame
@@ -66,6 +69,7 @@ public class enemyMove04 : MonoBehaviour
             }
             Destroy(gameObject);
             AudioSource.PlayClipAtPoint(sound, transform.position);
+            scoreText.GetComponent<Score>().score += 100;
         }
     }
 

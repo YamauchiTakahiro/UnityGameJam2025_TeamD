@@ -21,11 +21,16 @@ public class PlayerMove02 : MonoBehaviour
     public AudioClip LifeItemSound;
     public int hitCount = 3;
     public bool isHit;
+
+    private GameObject scoreText;
+    private GameObject lifeText;
     // Start is called before the first frame update
 
     void Start()
 
     {
+        scoreText = GameObject.Find("Score");
+        lifeText = GameObject.Find("Life");
     }
 
     // Update is called once per frame
@@ -79,12 +84,12 @@ public class PlayerMove02 : MonoBehaviour
         if (other.gameObject.CompareTag("ReinforcementItem"))
 
         {
-
             Destroy(other.gameObject);
 
             ReinforcementItemCount += 1;
 
             AudioSource.PlayClipAtPoint(ItemSound, transform.position);
+            scoreText.GetComponent<Score>().score += 100;
 
         }
 
@@ -95,6 +100,7 @@ public class PlayerMove02 : MonoBehaviour
             hitCount += 1;
 
             AudioSource.PlayClipAtPoint(LifeItemSound, transform.position);
+            lifeText.GetComponent<Life>().life++;
         }
 
         if (other.gameObject.CompareTag("EnemyBarrage"))
@@ -103,6 +109,8 @@ public class PlayerMove02 : MonoBehaviour
             AudioSource.PlayClipAtPoint(sound, transform.position);
             this.gameObject.layer = 10;
             Invoke(nameof(PlayerActive), 1.0f);
+            scoreText.GetComponent<Score>().score -= 100;
+            lifeText.GetComponent<Life>().life--;
             if (hitCount == 0)
             {
                 Destroy(gameObject);
