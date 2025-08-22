@@ -14,12 +14,18 @@ public class PlayerMove02 : MonoBehaviour
     public int ReinforcementItemCount = 0;
     [SerializeField] private Renderer PlaerInvincible;
     public GameObject[] ReinforceBarrage;
+    public GameObject[] Barrage;
+    public GameObject[] BombBarrage;
+    public GameObject enemyBarrage;
+
     public CollectionBase Player;
     public AudioClip sound;
 
     public AudioClip ItemSound;
     public AudioClip LifeItemSound;
+    public AudioClip BombItemSound;
     public int hitCount = 3;
+    public int bombCount = 0;
     public bool isHit;
 
     private GameObject scoreText;
@@ -45,7 +51,7 @@ public class PlayerMove02 : MonoBehaviour
 
         transform.position = new Vector3(transform.position.x + moveX, transform.position.y + moveY, transform.position.z);
 
-        if(transform.position.y < -4)
+        if (transform.position.y < -4)
         {
             transform.position = new Vector3(transform.position.x, -4.0f, transform.position.z);
         }
@@ -67,7 +73,6 @@ public class PlayerMove02 : MonoBehaviour
         }
 
         if (ReinforcementItemCount >= 1)
-
         {
 
             ReinforceBarrage[0].SetActive(true);
@@ -75,8 +80,18 @@ public class PlayerMove02 : MonoBehaviour
             ReinforceBarrage[1].SetActive(true);
 
         }
-    }
 
+        if (bombCount >= 1)
+        {
+            if (Input.GetKey("b"))
+            {
+                BombBarrage[0].SetActive(true);
+                bombCount--;
+
+                Invoke(nameof(Bomb), 1.0f);
+            }
+        }
+    }
     private void OnTriggerEnter(Collider other)
 
     {
@@ -103,6 +118,15 @@ public class PlayerMove02 : MonoBehaviour
             lifeText.GetComponent<Life>().life++;
         }
 
+        if (other.gameObject.CompareTag("BombItem"))
+        {
+            Destroy(other.gameObject);
+
+            bombCount += 1;
+
+            AudioSource.PlayClipAtPoint(BombItemSound, transform.position);
+        }
+
         if (other.gameObject.CompareTag("EnemyBarrage"))
         {
             hitCount -= 1;
@@ -123,6 +147,11 @@ public class PlayerMove02 : MonoBehaviour
     void PlayerActive()
     {
         this.gameObject.layer = 8;
+    }
+
+    void Bomb()
+    {
+        BombBarrage[0].SetActive(false);
     }
 }
 

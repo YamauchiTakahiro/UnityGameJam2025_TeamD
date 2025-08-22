@@ -25,5 +25,10 @@ public class EnemyBarrageDeleteScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (other.gameObject.CompareTag("BombBarrage"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

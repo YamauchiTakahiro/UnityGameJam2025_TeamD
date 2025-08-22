@@ -10,6 +10,7 @@ public class enemyMove06 : MonoBehaviour
     public bool flag;
     [SerializeField] GameObject item;
     [SerializeField] GameObject lifeitem;
+    [SerializeField] GameObject bombitem;
     public int random;
     public AudioClip sound;
 
@@ -58,11 +59,49 @@ public class enemyMove06 : MonoBehaviour
                     Instantiate(item, transform.position, Quaternion.identity);
                 }
             }
-            if (random >= 10 && random <= 20)
+            if (random >= 11 && random <= 13)
             {
                 if (lifeitem)
                 {
                     Instantiate(lifeitem, transform.position, Quaternion.identity);
+                }
+            }
+            if (random >= 14 && random <= 15)
+            {
+                if (bombitem)
+                {
+                    Instantiate(bombitem, transform.position, Quaternion.identity);
+                }
+            }
+            Destroy(gameObject);
+            AudioSource.PlayClipAtPoint(sound, transform.position);
+            scoreText.GetComponent<Score>().score += 100;
+        }
+
+        if (other.gameObject.CompareTag("BombBarrage"))
+        {
+            random = Random.Range(1, 100);
+            if (random <= 10)
+            {
+                if (item)
+                {
+                    Instantiate(item, transform.position, Quaternion.identity);
+                }
+            }
+
+            if (random >= 11 && random <= 13)
+            {
+                if (lifeitem)
+                {
+                    Instantiate(lifeitem, transform.position, Quaternion.identity);
+                }
+            }
+
+            if (random >= 14 && random <= 15)
+            {
+                if (bombitem)
+                {
+                    Instantiate(bombitem, transform.position, Quaternion.identity);
                 }
             }
             Destroy(gameObject);
