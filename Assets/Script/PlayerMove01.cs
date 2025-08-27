@@ -30,6 +30,7 @@ public class PlayerMove02 : MonoBehaviour
 
     private GameObject scoreText;
     private GameObject lifeText;
+    private GameObject bombText;
     // Start is called before the first frame update
 
     void Start()
@@ -87,7 +88,7 @@ public class PlayerMove02 : MonoBehaviour
             {
                 BombBarrage[0].SetActive(true);
                 bombCount--;
-
+                bombText.GetComponent<BombUI>().bomb--; 
                 Invoke(nameof(Bomb), 1.0f);
             }
         }
@@ -125,6 +126,7 @@ public class PlayerMove02 : MonoBehaviour
             bombCount += 1;
 
             AudioSource.PlayClipAtPoint(BombItemSound, transform.position);
+            bombText.GetComponent<BombUI>().bomb++;
         }
 
         if (other.gameObject.CompareTag("EnemyBarrage"))
