@@ -5,12 +5,13 @@ using UnityEngine;
 public class Enemy1SpawnScript : MonoBehaviour
 {
     [SerializeField] GameObject Enemy;
-    public GameObject EnemySpawn1; 
+    public GameObject EnemySpawn1;
+    public int spawnTimeRandom;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine("EnemySpawn");
-        Invoke(nameof(EnemySpaneActive), 40.0f);
+        Invoke(nameof(EnemySpaneActive), 100.0f);
     }
 
     // Update is called once per frame
@@ -23,7 +24,8 @@ public class Enemy1SpawnScript : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(4.0f);
+            spawnTimeRandom = Random.Range(1, 10);
+            yield return new WaitForSeconds(spawnTimeRandom);
             Instantiate(Enemy, transform.position, Quaternion.identity);
         }
     }

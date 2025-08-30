@@ -19,6 +19,6 @@ public class ResultScript : MonoBehaviour
 
     public void onClickStartButton()
     {
-        SceneManager.LoadScene("GameClear");
+        SceneManager.LoadScene("Title");
     }
 }
