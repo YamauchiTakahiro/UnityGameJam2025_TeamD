@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class PlayerMove02 : MonoBehaviour
 
@@ -38,6 +39,7 @@ public class PlayerMove02 : MonoBehaviour
     {
         scoreText = GameObject.Find("Score");
         lifeText = GameObject.Find("Life");
+        bombText = GameObject.Find("Bomb");
     }
 
     // Update is called once per frame
@@ -82,14 +84,21 @@ public class PlayerMove02 : MonoBehaviour
 
         }
 
-        if (bombCount >= 1)
+        if (bombCount >= 1 || ReinforcementItemCount >= 10)
         {
-            if (Input.GetKey("b"))
+            if (Input.GetKeyDown("b"))
             {
                 BombBarrage[0].SetActive(true);
-                bombCount--;
-                bombText.GetComponent<BombUI>().bomb--; 
-                Invoke(nameof(Bomb), 1.0f);
+                if(bombCount >= 1)
+                {
+                    bombCount--;
+                    bombText.GetComponent<BombUI>().bomb--;
+                }
+                if(bombCount <= 0)
+                {
+                    ReinforcementItemCount--;
+                }
+                Invoke(nameof(Bomb), 2.0f);
             }
         }
     }

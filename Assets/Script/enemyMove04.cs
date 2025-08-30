@@ -14,6 +14,7 @@ public class enemyMove04 : MonoBehaviour
     public AudioClip sound;
 
     private GameObject scoreText;
+    private GameObject ResultScoreText;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class enemyMove04 : MonoBehaviour
         //40•bŒã‚©‚çEnemy‚ª‚Å‚È‚¢‚æ‚¤‚É‚·‚é
         Invoke(nameof(EnemyDestroy), 40.0f);
         scoreText = GameObject.Find("Score");
+        ResultScoreText = GameObject.Find("ScoreResult");
     }
 
     // Update is called once per frame
@@ -78,6 +80,7 @@ public class enemyMove04 : MonoBehaviour
             Destroy(gameObject);
             AudioSource.PlayClipAtPoint(sound, transform.position);
             scoreText.GetComponent<Score>().score += 100;
+            //ResultScoreText.GetComponent<ScoreReslut>().resultScore += 100;
         }
 
         if (other.gameObject.CompareTag("BombBarrage"))
@@ -109,6 +112,7 @@ public class enemyMove04 : MonoBehaviour
             Destroy(gameObject);
             AudioSource.PlayClipAtPoint(sound, transform.position);
             scoreText.GetComponent<Score>().score += 100;
+            //ResultScoreText.GetComponent<ScoreReslut>().resultScore += 100;
         }
     }
 

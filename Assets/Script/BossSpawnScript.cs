@@ -19,7 +19,7 @@ public class BossSpawnScript : MonoBehaviour
 
     IEnumerator BossEnemySpawn()
     {
-        yield return new WaitForSeconds(40.0f);
+        yield return new WaitForSeconds(100.0f);
         Instantiate(BossEnemy, transform.position, Quaternion.identity);
     }
 }
