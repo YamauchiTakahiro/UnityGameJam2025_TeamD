@@ -29,24 +29,24 @@ public class enemyMove04 : MonoBehaviour
     void Update()
     {
         //y座標7以上の時フラグをtrueにする
-        if (transform.position.y >= 7)
+        if (transform.position.y >= 6)
         {
             flag = true;
         }
         //y座標が‐7以下の時フラグをfalseにする
-        else if (transform.position.y <= -7)
+        else if (transform.position.y <= -4)
         {
             flag = false;
         }
         //フラグがtrueの時に下に移動する
         if (flag)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(6, -7, 1), speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(6, -4, 1), speed * Time.deltaTime);
         }
         //フラグがfalseの時に上に移動する
         else if (!flag)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(6, 7, 1), speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(6, 6, 1), speed * Time.deltaTime);
         }
     }
 
