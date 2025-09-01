@@ -32,6 +32,7 @@ public class PlayerMove02 : MonoBehaviour
     private GameObject scoreText;
     private GameObject lifeText;
     private GameObject bombText;
+    private GameObject itemCountText;
     // Start is called before the first frame update
 
     void Start()
@@ -40,6 +41,7 @@ public class PlayerMove02 : MonoBehaviour
         scoreText = GameObject.Find("Score");
         lifeText = GameObject.Find("Life");
         bombText = GameObject.Find("Bomb");
+        itemCountText = GameObject.Find("ItemCount");
     }
 
     // Update is called once per frame
@@ -83,21 +85,24 @@ public class PlayerMove02 : MonoBehaviour
             ReinforceBarrage[1].SetActive(true);
 
         }
-
-        if (bombCount >= 1 || ReinforcementItemCount >= 10)
+                
+        if(bombCount >= 1)
         {
             if (Input.GetKeyDown("b"))
             {
                 BombBarrage[0].SetActive(true);
-                if(bombCount >= 1)
-                {
-                    bombCount--;
-                    bombText.GetComponent<BombUI>().bomb--;
-                }
-                if(bombCount <= 0)
-                {
-                    ReinforcementItemCount--;
-                }
+                bombCount--;
+                bombText.GetComponent<BombUI>().bomb--;
+                Invoke(nameof(Bomb), 2.0f);
+            }
+        }
+        else if (bombCount == 0 && ReinforcementItemCount >= 5)
+        {
+            if (Input.GetKeyDown("b"))
+            {
+                BombBarrage[0].SetActive(true);
+                ReinforcementItemCount -= 5;
+                itemCountText.GetComponent<ItemCount>().itemCount -= 5;
                 Invoke(nameof(Bomb), 2.0f);
             }
         }
@@ -115,6 +120,7 @@ public class PlayerMove02 : MonoBehaviour
 
             AudioSource.PlayClipAtPoint(ItemSound, transform.position);
             scoreText.GetComponent<Score>().score += 100;
+            itemCountText.GetComponent<ItemCount>().itemCount++;
 
         }
 
