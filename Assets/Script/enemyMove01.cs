@@ -28,24 +28,24 @@ public class enemyMove01 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y >= 7)
+        if (transform.position.y >= 6)
         {
             flag = true;
         }
 
-        else if (transform.position.y <= -7)
+        else if (transform.position.y <= -4)
         {
             flag = false;
         }
 
         if (flag)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(9, -7, 1), speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(9, -4, 1), speed * Time.deltaTime);
         }
 
         else if(!flag)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(9, 7, 1), speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(9, 6, 1), speed * Time.deltaTime);
         }
     }
 

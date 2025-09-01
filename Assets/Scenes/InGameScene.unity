@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76652e1d12a24c4882e434546f87be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 3236081774582749177, guid: 039b0cf3a5a7fd34bbfa90936ab649f5, type: 3}
+  Enemy: {fileID: 315990990006540329, guid: 1cc68d769f94a4e448d06ec83c2f4aa8, type: 3}
   EnemySpawn1: {fileID: 142998938}
   spawnTimeRandom: 0
 --- !u!1 &176079391
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d1a5797f353ff47808c87fe4c269e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 3236081774582749177, guid: 6d40036f51498a348937eca9c979d5f7, type: 3}
+  Enemy: {fileID: 2251731273914666230, guid: 631ed0ce2ca9a3e4eaa45c0b7eab7eab, type: 3}
   EnemySpawn1: {fileID: 176079391}
   spawnTimeRandom: 0
 --- !u!1 &251897360
@@ -641,7 +641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25bf70975458481449697cce20beb703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 3236081774582749177, guid: 21224385e888d51459819699ffe6e3e2, type: 3}
+  Enemy: {fileID: 3347562061207805497, guid: 1d7ebd3a61a009f4f9947c57213be0eb, type: 3}
   EnemySpawn1: {fileID: 482592578}
   spawnTimeRandom: 0
 --- !u!1 &545297577
@@ -673,7 +673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2b08104ce440c429fe293ee1ffaf0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BossEnemy: {fileID: 3236081774582749177, guid: de76d2ee60a472a44b35496a7b93e5c5, type: 3}
+  BossEnemy: {fileID: 3418901448425799230, guid: de76d2ee60a472a44b35496a7b93e5c5, type: 3}
 --- !u!4 &545297579
 Transform:
   m_ObjectHideFlags: 0
@@ -1026,7 +1026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98bb623d517189849a3ca4838b160574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 3236081774582749177, guid: 7c8084a25a7fd3a4ca2d1c44d42f5083, type: 3}
+  Enemy: {fileID: 5514200842942653020, guid: 7dbea65506eda1e42944379064e69d2b, type: 3}
   EnemySpawn1: {fileID: 1105265140}
   spawnTimeRandom: 0
 --- !u!1001 &1279981384
@@ -1426,7 +1426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c662ee8d9f2d4c141a529675f6c87126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 3236081774582749177, guid: cccba8a1ddb25824792c1fcf1cc78458, type: 3}
+  Enemy: {fileID: 7014814790279448136, guid: 0274c9dd532fece4e9f4c5204529f158, type: 3}
   EnemySpawn1: {fileID: 1535580071}
   spawnTimeRandom: 0
 --- !u!1 &1544664790
@@ -2075,7 +2075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042ff6d65346547429bd7192fc51835d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 3236081774582749177, guid: ac0cf1d3b58e71e48b0d1255e4de4857, type: 3}
+  Enemy: {fileID: 2178189891425386903, guid: f5bef417081a82d40a1d822fd1d7d6f8, type: 3}
   EnemySpawn1: {fileID: 1764214488}
   spawnTimeRandom: 0
 --- !u!4 &1764214490
