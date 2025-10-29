@@ -11,6 +11,7 @@ TagManager:
   - LifeItem
   - BombItem
   - BombBarrage
+  - BuckGround
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - LifeItem
   - BombItem
   - BombBarrage
-  - 
+  - BuckGround
   - 
   - 
   - 
