@@ -14,14 +14,14 @@ public class GameClearScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetButtonDown("Decision"))
-        //{
-        //    SceneManager.LoadScene("TitleController");
-        //}
+        if (Input.GetButtonDown("Fire1"))
+        {
+               SceneManager.LoadScene("Title");
+        }
     }
 
-    public void onClickStartButton()
-    {
-        SceneManager.LoadScene("Title");
-    }
+    //public void onClickStartButton()
+    //{
+    //    SceneManager.LoadScene("Title");
+    //}
 }

@@ -88,23 +88,25 @@ public class PlayerMove02 : MonoBehaviour
                 
         if(bombCount >= 1)
         {
-            if (Input.GetKeyDown("b"))
+            BombBarrage[0].SetActive(true);
+            if (Input.GetButtonDown("Fire2"))
             {
-                BombBarrage[0].SetActive(true);
                 bombCount--;
                 bombText.GetComponent<BombUI>().bomb--;
-                Invoke(nameof(Bomb), 2.0f);
             }
         }
         else if (bombCount == 0 && ReinforcementItemCount >= 5)
         {
-            if (Input.GetKeyDown("b"))
+            BombBarrage[0].SetActive(true);
+            if (Input.GetButtonDown("Fire2"))
             {
-                BombBarrage[0].SetActive(true);
                 ReinforcementItemCount -= 5;
                 itemCountText.GetComponent<ItemCount>().itemCount -= 5;
-                Invoke(nameof(Bomb), 2.0f);
             }
+        }
+        else if(bombCount == 0 && ReinforcementItemCount < 5)
+        {
+            BombBarrage[0].SetActive(false);
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -164,11 +166,6 @@ public class PlayerMove02 : MonoBehaviour
     void PlayerActive()
     {
         this.gameObject.layer = 8;
-    }
-
-    void Bomb()
-    {
-        BombBarrage[0].SetActive(false);
     }
 }
 

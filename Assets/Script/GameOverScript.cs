@@ -14,11 +14,14 @@ public class GameOverScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Fire1"))
+        {
+            SceneManager.LoadScene("Title");
+        }
     }
 
-    public void onClickStartButton()
-    {
-        SceneManager.LoadScene("Title");
-    }
+    //public void onClickStartButton()
+    //{
+    //    SceneManager.LoadScene("Title");
+    //}
 }
