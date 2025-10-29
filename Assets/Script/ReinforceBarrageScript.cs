@@ -21,7 +21,7 @@ public class ReinforceBarrage : MonoBehaviour
         time += Time.deltaTime;
         if (time > timeReset)
         {
-            if (Input.GetKey("space"))
+            if (Input.GetButton("Fire1"))
             {
                 GameObject ball = (GameObject)Instantiate(sphere, transform.position, Quaternion.identity);
                 Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();

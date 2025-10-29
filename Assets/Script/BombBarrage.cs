@@ -23,7 +23,7 @@ public class BombBarrage : MonoBehaviour
         if (time > timeReset)
         {
             //spaceキー長押しで実行する
-            if (Input.GetKey("space"))
+            if (Input.GetButtonDown("Fire2"))
             {
                 //弾を出す
                 GameObject barrage = (GameObject)Instantiate(Bombsphere, transform.position, Quaternion.identity);
