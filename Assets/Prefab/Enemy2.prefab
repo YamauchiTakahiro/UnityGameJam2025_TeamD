@@ -192,6 +192,7 @@ MonoBehaviour:
   bombitem: {fileID: 7866026816920330701, guid: 24ad75f8126104e41943ab3892048de1, type: 3}
   random: 0
   sound: {fileID: 8300000, guid: 3e960f3fd38350c4e882d9b57df156ee, type: 3}
+  exp: {fileID: 3912111405379608829, guid: d05896fdf5e58c645bafdc2c20684712, type: 3}
 --- !u!64 &5304130206714629846
 MeshCollider:
   m_ObjectHideFlags: 0

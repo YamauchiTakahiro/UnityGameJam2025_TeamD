@@ -17,6 +17,7 @@ public class enemyMove06 : MonoBehaviour
     private GameObject scoreText;
     private GameObject ResultScoreText;
 
+    [SerializeField] GameObject exp;
     // Start is called before the first frame update
     void Start()
     {
@@ -75,6 +76,7 @@ public class enemyMove06 : MonoBehaviour
                     Instantiate(bombitem, transform.position, Quaternion.identity);
                 }
             }
+            GameObject explosion = (GameObject)Instantiate(exp, transform.position, Quaternion.identity);
             Destroy(gameObject);
             AudioSource.PlayClipAtPoint(sound, transform.position);
             scoreText.GetComponent<Score>().score += 100;
@@ -107,6 +109,7 @@ public class enemyMove06 : MonoBehaviour
                     Instantiate(bombitem, transform.position, Quaternion.identity);
                 }
             }
+            GameObject explosion = (GameObject)Instantiate(exp, transform.position, Quaternion.identity);
             Destroy(gameObject);
             AudioSource.PlayClipAtPoint(sound, transform.position);
             scoreText.GetComponent<Score>().score += 100;
