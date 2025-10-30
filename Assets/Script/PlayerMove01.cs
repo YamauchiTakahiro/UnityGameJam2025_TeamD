@@ -41,7 +41,7 @@ public class PlayerMove02 : MonoBehaviour
         scoreText = GameObject.Find("Score");
         lifeText = GameObject.Find("Life");
         bombText = GameObject.Find("Bomb");
-        itemCountText = GameObject.Find("ItemCount");
+        itemCountText = GameObject.Find("Item");
     }
 
     // Update is called once per frame
