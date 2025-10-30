@@ -17,6 +17,7 @@ public class enemyMove01 : MonoBehaviour
     private GameObject scoreText;
     private GameObject ResultScoreText;
 
+    [SerializeField] GameObject exp;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +44,7 @@ public class enemyMove01 : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(9, -4, 1), speed * Time.deltaTime);
         }
 
-        else if(!flag)
+        else if (!flag)
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(9, 6, 1), speed * Time.deltaTime);
         }
@@ -52,9 +53,9 @@ public class enemyMove01 : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("PlayerBarrage"))
-        { 
+        {
             random = Random.Range(1, 100);
-            if(random <= 10)
+            if (random <= 10)
             {
                 if (item)
                 {
@@ -77,6 +78,7 @@ public class enemyMove01 : MonoBehaviour
                     Instantiate(bombitem, transform.position, Quaternion.identity);
                 }
             }
+            GameObject explosion = (GameObject)Instantiate(exp, transform.position, Quaternion.identity);
             Destroy(gameObject);
             AudioSource.PlayClipAtPoint(sound, transform.position);
             scoreText.GetComponent<Score>().score += 100;
@@ -109,6 +111,7 @@ public class enemyMove01 : MonoBehaviour
                     Instantiate(bombitem, transform.position, Quaternion.identity);
                 }
             }
+            GameObject explosion = (GameObject)Instantiate(exp, transform.position, Quaternion.identity);
             Destroy(gameObject);
             AudioSource.PlayClipAtPoint(sound, transform.position);
             scoreText.GetComponent<Score>().score += 100;
