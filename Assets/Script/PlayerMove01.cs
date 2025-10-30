@@ -94,11 +94,21 @@ public class PlayerMove02 : MonoBehaviour
                 bombCount--;
                 bombText.GetComponent<BombUI>().bomb--;
             }
+            else if (Input.GetKeyDown(KeyCode.B))
+            {
+                bombCount--;
+                bombText.GetComponent<BombUI>().bomb--;
+            }
         }
         else if (bombCount == 0 && ReinforcementItemCount >= 5)
         {
             BombBarrage[0].SetActive(true);
             if (Input.GetButtonDown("Fire2"))
+            {
+                ReinforcementItemCount -= 5;
+                itemCountText.GetComponent<ItemCount>().itemCount -= 5;
+            }
+            else if (Input.GetKeyDown(KeyCode.B))
             {
                 ReinforcementItemCount -= 5;
                 itemCountText.GetComponent<ItemCount>().itemCount -= 5;

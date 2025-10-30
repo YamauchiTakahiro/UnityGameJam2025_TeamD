@@ -32,6 +32,15 @@ public class BombBarrage : MonoBehaviour
                 AudioSource.PlayClipAtPoint(sound, transform.position);
                 time = 0;
             }
+            else if (Input.GetKeyDown(KeyCode.B))
+            {
+                //íeÇèoÇ∑
+                GameObject barrage = (GameObject)Instantiate(Bombsphere, transform.position, Quaternion.identity);
+                Rigidbody barrageRigidbody = barrage.GetComponent<Rigidbody>();
+                barrageRigidbody.AddForce(transform.right * speed);
+                AudioSource.PlayClipAtPoint(sound, transform.position);
+                time = 0;
+            }
 
         }
     }

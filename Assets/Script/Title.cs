@@ -18,6 +18,10 @@ public class Title : MonoBehaviour
         {
             SceneManager.LoadScene("InGameScene");
         }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("InGameScene");
+        }
     }
 
     public void onClickStartButton()
