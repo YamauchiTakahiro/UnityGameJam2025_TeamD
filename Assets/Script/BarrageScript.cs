@@ -32,7 +32,16 @@ public class BarrageScript : MonoBehaviour
                 AudioSource.PlayClipAtPoint(sound, transform.position);
                 time = 0;
             }
-            
+            else if (Input.GetKey(KeyCode.Space))
+            {
+                //íeÇèoÇ∑
+                GameObject barrage = (GameObject)Instantiate(sphere, transform.position, Quaternion.identity);
+                Rigidbody barrageRigidbody = barrage.GetComponent<Rigidbody>();
+                barrageRigidbody.AddForce(transform.right * speed);
+                AudioSource.PlayClipAtPoint(sound, transform.position);
+                time = 0;
+            }
+
         }
     }
 }

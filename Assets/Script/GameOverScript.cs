@@ -18,10 +18,14 @@ public class GameOverScript : MonoBehaviour
         {
             SceneManager.LoadScene("Title");
         }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("Title");
+        }
     }
 
-    //public void onClickStartButton()
-    //{
-    //    SceneManager.LoadScene("Title");
-    //}
+    public void onClickStartButton()
+    {
+        SceneManager.LoadScene("Title");
+    }
 }

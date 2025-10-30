@@ -29,6 +29,14 @@ public class ReinforceBarrage : MonoBehaviour
                 AudioSource.PlayClipAtPoint(sound, transform.position);
                 time = 0;
             }
+            else if (Input.GetKey(KeyCode.Space))
+            {
+                GameObject ball = (GameObject)Instantiate(sphere, transform.position, Quaternion.identity);
+                Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
+                ballRigidbody.AddForce(transform.right * speed);
+                AudioSource.PlayClipAtPoint(sound, transform.position);
+                time = 0;
+            }
         }
     }
 }
